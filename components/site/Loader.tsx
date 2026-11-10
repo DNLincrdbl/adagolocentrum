@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const TARGET = 2500;
+const TARGET = 3000;
 const DURATION = 2100;
 
 function easeOut(progress: number) {
@@ -73,10 +73,10 @@ export function Loader() {
     >
       <div className="flex flex-col items-center px-6">
         <Image
-          src="/brand/logo.png"
+          src="/brand/moricz-logo.png"
           alt="Móricz Bosch Diesel Center"
-          width={600}
-          height={153}
+          width={1646}
+          height={490}
           priority
           className="h-16 w-auto sm:h-20"
         />

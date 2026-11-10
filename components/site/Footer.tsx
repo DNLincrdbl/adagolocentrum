@@ -6,8 +6,9 @@ const pages = [...mainNav, { href: "/kapcsolat", label: "Kapcsolat" }];
 
 export function Footer() {
   return (
-    <footer className="bg-paper">
-      <div className="mx-auto max-w-6xl px-4 pt-8 pb-8 md:px-6">
+    <footer className="bg-white">
+      <div aria-hidden="true" className="h-40 bg-gradient-to-b from-paper to-white" />
+      <div className="mx-auto max-w-6xl px-4 pb-8 md:px-6">
         <div className="grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative z-10 p-8 sm:p-12 lg:py-16 lg:pr-6 lg:pl-14">
             <p className="text-sm font-medium text-muted">Móricz Bosch Diesel Center</p>
@@ -40,14 +41,14 @@ export function Footer() {
         <div className="grid gap-10 px-2 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1.1fr] lg:px-4">
           <div>
             <Image
-              src="/brand/logo.png"
+              src="/brand/moricz-logo.png"
               alt="Móricz Bosch Diesel Center"
-              width={600}
-              height={153}
+              width={1646}
+              height={490}
               className="h-12 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Dieseladagoló-szerviz és alkatrész. Bosch, Delphi, Denso és Stanadyne.
+              Dieseladagoló-szerviz és alkatrész. Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental.
             </p>
           </div>
 

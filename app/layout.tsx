@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Móricz Bosch Diesel Center",
   },
   description:
-    "A Móricz Kft. hajdúböszörményi Bosch Diesel Centere dieseladagolók diagnosztikáját, javítását és felújítását végzi az ország egész területén. Bosch, Delphi, Denso és Stanadyne.",
+    "A Móricz Kft. hajdúböszörményi Bosch Diesel Centere dieseladagolók diagnosztikáját, javítását és felújítását végzi az ország egész területén. Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental.",
   openGraph: {
     title: "Móricz Bosch Diesel Center",
     description:

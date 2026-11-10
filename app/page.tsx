@@ -2,21 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Faq } from "@/components/site/Faq";
-import { references } from "@/lib/catalog";
+import { additionalPartners, references } from "@/lib/catalog";
 import { albums } from "@/lib/archive";
 import { company, gallery, news, staff } from "@/lib/site";
 
 const stats = [
-  { value: "2001", label: "óta dieseladagolók" },
+  { value: "2001", label: "óta diesel rendszerek javítása" },
   { value: "10", label: "szakember a műhelyben" },
-  { value: "2500", label: "barig a vizsgálórail" },
-  { value: "4", label: "márka: Bosch–Stanadyne" },
+  { value: "3000", label: "barig vizsgálunk" },
+  { value: "7", label: "teljes körű képviselet" },
 ];
 
 const reasons = [
   {
     title: "Gyári technológia",
-    text: "Bosch, Hartridge, Stanadyne és Carbon Zapp próbapadok, a common rail javításhoz szükséges teljes sorral.",
+    text: "Bosch, Hartridge, Stanadyne és Carbon Zapp próbapadok, a common rail javításhoz szükséges teljes sorral. Az eddig kiadott Bosch gyári javítási technológiák mindegyikével rendelkezünk.",
     icon: "M4 7h16M4 12h16M4 17h10",
   },
   {
@@ -26,7 +26,7 @@ const reasons = [
   },
   {
     title: "Alkatrész raktárról",
-    text: "Bosch, Delphi, Denso és Stanadyne disztribútorok vagyunk. Egyes típusok azonnal elvihetők.",
+    text: "Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental disztribútorok vagyunk. Egyes típusok azonnal elvihetők.",
     icon: "M4 8h16v11H4zM8 8V5h8v3",
   },
   {
@@ -45,7 +45,7 @@ const services = [
   },
   {
     title: "Common Rail és CP4",
-    text: "Magasnyomású szivattyúk és injektorok vizsgálata, kódolása, javítása, akár 2500 barig.",
+    text: "Magasnyomású szivattyúk és injektorok vizsgálata, kódolása, javítása, akár 3000 barig.",
     href: "/dieseltechnologia",
     image: gallery[0].src,
   },
@@ -65,8 +65,30 @@ const steps = [
   "A kész adagolót a kért címre postázzuk.",
 ];
 
+const trustNames = [...references.map((item) => item.name), ...additionalPartners];
+const office = staff.filter((person) => person.place === "iroda");
+const workshop = staff.filter((person) => person.place === "muhely");
+
+function People({ people }: { people: readonly { name: string; role: string; photo: string }[] }) {
+  return (
+    <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {people.map((person) => (
+        <article key={person.name} className="overflow-hidden rounded-[1.35rem] bg-paper">
+          <div className="relative h-52">
+            <Image src={person.photo} alt={person.name} fill className="object-cover object-[center_28%]" sizes="(min-width: 1024px) 22vw, 45vw" />
+          </div>
+          <div className="p-4">
+            <p className="font-extrabold tracking-tight">{person.name}</p>
+            <p className="mt-0.5 text-sm text-muted">{person.role}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export default function HomePage() {
-  const loop = [...references, ...references];
+  const loop = [...trustNames, ...trustNames];
 
   return (
     <>
@@ -86,7 +108,7 @@ export default function HomePage() {
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
           <div className="relative z-10 flex min-h-[40rem] flex-col justify-end p-6 sm:p-10 md:p-14">
-            <p className="text-xs font-extrabold tracking-[0.22em] text-accent uppercase">
+            <p className="text-xs font-extrabold tracking-[0.22em] text-accent-bright uppercase">
               Bosch Diesel Center · Hajdúböszörmény
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-white sm:text-6xl lg:text-7xl">
@@ -116,12 +138,12 @@ export default function HomePage() {
       </section>
 
       <section className="py-10">
-        <p className="text-center text-xs font-extrabold tracking-[0.2em] text-muted uppercase">Akik ránk bízzák az adagolót</p>
+        <p className="text-center text-xs font-extrabold tracking-[0.2em] text-muted uppercase">Akik már bíznak szakértelmünkben</p>
         <div className="marquee-mask mt-5 overflow-hidden">
           <div className="marquee-track flex w-max gap-10 px-4">
-            {loop.map((item, index) => (
-              <span key={`${item.name}-${index}`} className="text-sm font-extrabold tracking-tight text-ink/35">
-                {item.name}
+            {loop.map((name, index) => (
+              <span key={`${name}-${index}`} className="text-sm font-extrabold tracking-tight text-ink/35">
+                {name}
               </span>
             ))}
           </div>
@@ -184,7 +206,7 @@ export default function HomePage() {
         </div>
         <div className="flex flex-col justify-between rounded-[2rem] bg-ink p-8 text-white md:p-10">
           <div>
-            <p className="text-xs font-extrabold tracking-[0.2em] text-accent uppercase">A centrum</p>
+            <p className="text-xs font-extrabold tracking-[0.2em] text-accent-bright uppercase">A centrum</p>
             <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-balance">Hajdúböszörményből, az M35 mellett.</h2>
             <p className="mt-4 text-sm leading-relaxed text-pretty text-white/70">
               Budapesttől másfél óra az M3-ason és az M35-ösön. Debrecen felől a 35-ösön a Polgári utcai lehajtó az utolsó lehetőség a városközpont felé.
@@ -215,32 +237,22 @@ export default function HomePage() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-extrabold tracking-[0.2em] text-accent uppercase">Csapat</p>
-              <h2 className="mt-3 text-4xl font-extrabold tracking-tight md:text-5xl">Akik a pad mellett állnak.</h2>
+              <h2 className="mt-3 text-4xl font-extrabold tracking-tight md:text-5xl">Akik az irodában várnak.</h2>
             </div>
             <Link href="/munkatarsaink" className="hidden text-sm font-extrabold text-accent sm:inline">
               Teljes névsor
             </Link>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {staff.map((person) => (
-              <article key={person.name} className="overflow-hidden rounded-[1.35rem] bg-paper">
-                <div className="relative h-52">
-                  <Image src={person.photo} alt={person.name} fill className="object-cover object-top" sizes="(min-width: 1024px) 22vw, 45vw" />
-                </div>
-                <div className="p-4">
-                  <p className="font-extrabold tracking-tight">{person.name}</p>
-                  <p className="mt-0.5 text-sm text-muted">{person.role}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <People people={office} />
+          <h3 className="mt-14 text-3xl font-extrabold tracking-tight md:text-4xl">Akik a pad mellett állnak.</h3>
+          <People people={workshop} />
         </div>
       </section>
 
       <section className="bg-ink py-16 text-white md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-xs font-extrabold tracking-[0.2em] text-accent uppercase">Referenciák</p>
+            <p className="text-xs font-extrabold tracking-[0.2em] text-accent-bright uppercase">Referenciák</p>
             <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-balance">Volánok, szervizek, agrárcégek.</h2>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               Az elmúlt években hazai és határon túli partnerek bízták ránk az adagolóikat. A lista a korábbi honlap közlése.
@@ -284,7 +296,7 @@ export default function HomePage() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-extrabold tracking-[0.2em] text-accent uppercase">Galéria</p>
-              <h2 className="mt-3 text-4xl font-extrabold tracking-tight md:text-5xl">A pad, amin a nyomás eldől.</h2>
+              <h2 className="mt-3 text-4xl font-extrabold tracking-tight md:text-5xl">Emlékeink</h2>
             </div>
             <Link href="/galeria" className="text-sm font-extrabold text-accent">
               Nagyítás
@@ -342,7 +354,7 @@ export default function HomePage() {
       <section className="px-4 pt-8 pb-6 md:px-6">
         <div className="mx-auto grid max-w-6xl items-start gap-8 rounded-[2rem] bg-ink p-6 md:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
           <div className="text-white">
-            <p className="text-xs font-extrabold tracking-[0.2em] text-accent uppercase">Beszéljünk</p>
+            <p className="text-xs font-extrabold tracking-[0.2em] text-accent-bright uppercase">Beszéljünk</p>
             <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-balance md:text-5xl">A következő adagoló már úton lehet.</h2>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               Írjon, vagy hívjon. Az űrlap a saját levelezőprogramját nyitja meg, a cím {company.email}.

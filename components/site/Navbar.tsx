@@ -19,10 +19,10 @@ export function Navbar() {
       <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="shrink-0" aria-label="Kezdőlap">
           <Image
-            src="/brand/logo.png"
+            src="/brand/moricz-logo.png"
             alt="Móricz Bosch Diesel Center, Hajdúböszörmény"
-            width={600}
-            height={153}
+            width={1646}
+            height={490}
             priority
             className="h-10 w-auto sm:h-12"
           />

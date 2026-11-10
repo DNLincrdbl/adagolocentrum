@@ -27,7 +27,7 @@ export const company = {
     },
     {
       role: "Vevőszolgálat, I. termékcsoport",
-      name: "Papp Edit",
+      name: "Szabó Csaba",
       phone: "+36 20 545 4800",
       tel: "+36205454800",
     },
@@ -99,18 +99,18 @@ export const gallery = [
 ] as const;
 
 export const staff = [
-  { name: "Móricz Zsolt", role: "Szervizvezető-tulajdonos", photo: "/from-site/img/0401.jpg" },
-  { name: "Papp Edit", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0402.jpg" },
-  { name: "Boros Csilla", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0403.jpg" },
-  { name: "Boros Gábor", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0404.jpg" },
-  { name: "Beke Antal", role: "Dieselszerelő", photo: "/from-site/img/0411.jpg" },
-  { name: "Szombati László", role: "Dieselszerelő", photo: "/from-site/img/0412.jpg" },
-  { name: "Kathi Sándor", role: "Dieselszerelő", photo: "/from-site/img/0414.jpg" },
-  { name: "Erdei Zoltán", role: "Dieselszerelő", photo: "/from-site/img/0423.jpg" },
-  { name: "Szepesi Szabolcs", role: "Dieselszerelő", photo: "/from-site/img/0422.jpg" },
-  { name: "Varga Zoltán", role: "Dieselszerelő", photo: "/from-site/img/0415.jpg" },
-  { name: "Sipos Ákos", role: "Dieselszerelő", photo: "/from-site/img/0413.jpg" },
-  { name: "Fekete Patrik", role: "Dieselszerelő", photo: "/from-site/img/0421.jpg" },
+  { name: "Móricz Zsolt", role: "Szervizvezető-tulajdonos", photo: "/from-site/img/0401.jpg", place: "iroda" },
+  { name: "Papp Edit", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0402.jpg", place: "iroda" },
+  { name: "Boros Csilla", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0403.jpg", place: "iroda" },
+  { name: "Boros Gábor", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0404.jpg", place: "iroda" },
+  { name: "Szabó Csaba", role: "Vevőszolgálat, I. termékcsoport", photo: "/media/szabo-csaba.jpg", place: "iroda" },
+  { name: "Beke Antal", role: "Dieselszerelő", photo: "/from-site/img/0411.jpg", place: "muhely" },
+  { name: "Kathi Sándor", role: "Dieselszerelő", photo: "/from-site/img/0414.jpg", place: "muhely" },
+  { name: "Erdei Zoltán", role: "Dieselszerelő", photo: "/from-site/img/0423.jpg", place: "muhely" },
+  { name: "Szepesi Szabolcs", role: "Dieselszerelő", photo: "/from-site/img/0422.jpg", place: "muhely" },
+  { name: "Varga Zoltán", role: "Dieselszerelő", photo: "/from-site/img/0415.jpg", place: "muhely" },
+  { name: "Sipos Ákos", role: "Dieselszerelő", photo: "/from-site/img/0413.jpg", place: "muhely" },
+  { name: "Fekete Patrik", role: "Dieselszerelő", photo: "/from-site/img/0421.jpg", place: "muhely" },
 ] as const;
 
 export const milestones = [

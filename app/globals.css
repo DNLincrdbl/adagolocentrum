@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f3f4f6;
+  --paper: #f4f7fa;
   --ink: #121212;
   --muted: #5c616b;
-  --accent: #ff2b8a;
+  --accent: #01558e;
+  --accent-bright: #9fd4f5;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
   --font-sans: var(--font-jakarta);
 }
 
@@ -26,7 +28,7 @@ body {
 }
 
 ::selection {
-  background: #ff2b8a;
+  background: #01558e;
   color: #fff;
 }
 
@@ -40,7 +42,7 @@ body {
 }
 
 .marquee-track {
-  animation: marquee 70s linear infinite;
+  animation: marquee 110s linear infinite;
 }
 
 .marquee-mask {

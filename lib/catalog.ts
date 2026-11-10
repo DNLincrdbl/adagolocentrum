@@ -17,7 +17,7 @@ export const priceGroups: {
   {
     id: "i",
     title: "I. termékcsoport",
-    contact: "Papp Edit",
+    contact: "Szabó Csaba",
     phone: "+36 20 545 4800",
     tel: "+36205454800",
     rows: [
@@ -145,6 +145,34 @@ export const references: Reference[] = rawReferences.map(([name, city, since, co
   since,
   country,
 }));
+
+const namedPartners = [
+  "AgroVario Kft.",
+  "Kite Zrt.",
+  "Postaflotta Kft.",
+  "Magisz Kft.",
+  "Szentmihályi Gép Kft.",
+  "Katona-Motors Kft.",
+  "G&G Car Service Kft.",
+  "Domokos Autószervíz Kft.",
+  "Mercarius Kft.",
+  "ÉRV Zrt.",
+  "Szilágyi Autószervíz",
+  "Szerencsi Mg Zrt.",
+  "NYAKAS FARM Kft.",
+  "LANZS Kft.",
+  "Start Agro Kft.",
+  "VAGÉP Zrt.",
+];
+
+function samePartner(left: string, right: string) {
+  const clean = (value: string) => value.toLocaleLowerCase("hu").replace(/\./g, "").replace(/\s+/g, " ").trim();
+  return clean(left) === clean(right);
+}
+
+export const additionalPartners = namedPartners.filter(
+  (name) => !references.some((item) => samePartner(item.name, name)),
+);
 
 export const tractor = {
   name: "Retro Kóboj",

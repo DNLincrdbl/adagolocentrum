@@ -60,7 +60,7 @@ export default function ServicesPage() {
           <article className="rounded-[1.75rem] bg-white p-7 ring-1 ring-black/5 md:p-9">
             <h2 className="text-3xl font-semibold tracking-tight">Alkatrészek kis- és nagykereskedelme</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Nemcsak javítunk és felújítunk. Az Európában legelterjedtebb dieseladagolókhoz alkatrészt is kínálunk, versenyképes áron. Bosch, Delphi, Denso és Stanadyne disztribútorok vagyunk.
+              Nemcsak javítunk és felújítunk. Az Európában legelterjedtebb dieseladagolókhoz alkatrészt is kínálunk, versenyképes áron. Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental disztribútorok vagyunk.
             </p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {parts.map((part) => (
