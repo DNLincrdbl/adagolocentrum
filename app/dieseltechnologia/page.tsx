@@ -19,9 +19,7 @@ export default function DieselPage() {
         image="/from-site/img/bosch_eps815cr.jpg"
       />
       <section className="mx-auto max-w-6xl px-4 py-12 md:px-6">
-        <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted">
-          {dieselIntro[1]} Minden kártya a régi oldal egy gépe: a fotó, a típuslista és a teljes leírás. A hosszabb szöveg a Több gombbal nyílik.
-        </p>
+        <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted">{dieselIntro[1]}</p>
         <BenchGrid />
         <p className="mt-6 text-sm text-muted">{benches.length} vizsgálóberendezés.</p>
       </section>

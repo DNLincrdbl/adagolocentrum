@@ -31,13 +31,18 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
       </Link>
       <p className="mt-8 text-xs font-semibold tracking-[0.18em] text-muted uppercase">{article.date}</p>
       <h1 className="mt-3 text-4xl font-semibold tracking-tight text-balance md:text-5xl">{article.title}</h1>
-      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-[1.5rem]">
-        <Image src={article.image} alt="" fill className="object-cover" priority />
+      <div className={`relative mt-8 aspect-[16/9] overflow-hidden rounded-[1.5rem] ${article.contain ? "bg-paper" : ""}`}>
+        <Image src={article.image} alt="" fill className={article.contain ? "object-contain p-6" : "object-cover"} priority />
       </div>
       <div className="mt-8 space-y-5 text-base leading-relaxed text-pretty text-muted">
         {article.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
+        {article.link ? (
+          <a href={article.link.href} target="_blank" rel="noreferrer" className="inline-flex font-bold text-accent underline-offset-4 hover:underline">
+            {article.link.label}
+          </a>
+        ) : null}
       </div>
     </article>
   );

@@ -12,6 +12,7 @@ export const company = {
   bank: "116000006-00000000-66139399",
   bankName: "Polgári Takarékszövetkezet",
   gps: { lat: 47.684343, lng: 21.495953 },
+  tiktok: "https://www.tiktok.com/@moricz.kft",
   phones: [
     {
       role: "Szervizvezető-tulajdonos",
@@ -51,6 +52,7 @@ export const footerGroups = [
       { href: "/minosegpolitika", label: "Minőségpolitika" },
       { href: "/munkatarsaink", label: "Munkatársaink" },
       { href: "/ginop", label: "GINOP Plusz" },
+      { href: "/technologiai-fejlesztes", label: "Technológiai fejlesztés" },
     ],
   },
   {
@@ -168,9 +170,105 @@ export type NewsArticle = {
   image: string;
   lead: string;
   paragraphs: string[];
+  link?: { href: string; label: string };
+  contain?: boolean;
+  home?: boolean;
 };
 
 export const news: NewsArticle[] = [
+  {
+    slug: "avm2-3000-bar",
+    title: "2027-es tervek: AVM2-PC bővítés, 3000 baros szivattyúvizsgáló rendszer",
+    date: "2027",
+    image: "/media/hirek/avm2-3000.png",
+    contain: true,
+    home: true,
+    lead: "A legkorszerűbb dieselmotorok 3000 bar körüli befecskendezési csúcsnyomáson működnek. Az ehhez tartozó vizsgálórendszer beszerzése folyamatban van.",
+    paragraphs: [
+      "A legkorszerűbb dieselmotorok 3000 bar körüli befecskendezési csúcsnyomáson működnek, ezen alkatrészek javítása és tesztelése teljesen új terület. Az eszköz beszerzése folyamatban van.",
+    ],
+  },
+  {
+    slug: "avm2-hk870",
+    title: "HK870 bővítőkészlet érkezett az AVM2 próbapadra",
+    date: "2025",
+    image: "/media/hirek/avm2-hk870.jpg",
+    contain: true,
+    home: true,
+    lead: "2025 márciusában EUI és EUP tesztkészlet érkezett az AVM2-PC berendezéshez, injektor- és szivattyúspecifikus készletekkel.",
+    paragraphs: [
+      "2025 márciusában HK870 bővítőkészlet érkezett az AVM2 próbapadra. EUI és EUP tesztkészlet az AVM2-PC berendezéshez, injektor- és szivattyúspecifikus készletekkel.",
+      "Ezzel lehet javítani az E3-as és E1-es befecskendező egységeket, amelyeket a Volvo, a John Deere és a Hyundai széles palettában használ.",
+      "Euro 5-ös smart rendszer, amely a DAF dieselmotorokban végzi a munkát.",
+    ],
+  },
+  {
+    slug: "cri-pro-probapad",
+    title: "Megérkezett a CRI-Pro próbapad",
+    date: "2024",
+    image: "/media/hirek/cri-pro.png",
+    contain: true,
+    home: true,
+    lead: "Ezen a próbapadon lehet javítani az F2E, F2P és F2R rendszereket.",
+    link: { href: "https://www.hartridge.com/products/product/cri-pro-test-bench", label: "A CRI-Pro próbapad a gyártó oldalán" },
+    paragraphs: [
+      "Ezen a próbapadon lehet javítani az F2E, F2P és F2R rendszereket.",
+      "A Delphi F2E rendszert a Renault és a Volvo alkalmazza Euro 6-os haszongépjárműveiben, amelyeket világszerte – Észak-Amerikában, az ázsiai-csendes-óceáni térségben, Európában, a Közel-Keleten/Afrikában és Brazíliában – értékesítenek. A Volvo az F2E rendszert az FH16, FH, FMX és FM modelljeiben, a Renault pedig a C, K és T modelljeiben használja 2014-től kezdődően. Ezekben a járművekben D11K, DTi11, D13K, DTi13 és D16K típusú, soros, 6 hengeres motorok találhatók, amelyek teljesítménye 330 és 750 LE között mozog. A rendszert a Hyundai is alkalmazza H és L sorozatú, 6 hengeres motorjaiban.",
+      "A Delphi F2P rendszere megtalálható a DAF/Paccar Euro 6-os haszongépjárműveiben, amelyeket világszerte – Európában, a Közel-Keleten és Afrikában, Brazíliában, valamint Észak-Amerikában – értékesítenek. A nagynyomású, közös nyomócsöves (Common Rail) üzemanyagrendszert (F2P) úgy tervezték, hogy megfeleljen a legújabb, Euro 6 és US13 károsanyag-kibocsátási előírásoknak; a rendszer a DAF CF és XF tehergépkocsikban alkalmazott MX11 (10,8 literes) és MX13 (12,9 literes) motorokba van beépítve.",
+      "A Delphi F2R rendszert a Mercedes-Benz alkalmazza azokban az Euro 6-os haszongépjárművekben, amelyeket világszerte – Észak-Amerikában, Európában, a Közel-Keleten/Afrikában és Brazíliában – értékesítenek. A Mercedes-Benz az F2R rendszert az 5,1 literes (4 hengeres) OM934 és a 7,7 literes (6 hengeres) OM936 típusú motorokban használja; ezek a motorok a Mercedes-Benz Atego, Unimog, Antos, Arocs, Actros és Econic tehergépkocsikban, valamint a Citaro autóbuszban találhatók meg.",
+    ],
+  },
+  {
+    slug: "cri-pro-f2",
+    title: "Betekintés az F2-es befecskendezők javításába",
+    date: "2024",
+    image: "/media/hirek/cri-pro-f2.png",
+    contain: true,
+    home: true,
+    lead: "Az F2-es Delphi magasnyomású javításánál a fúvókák illesztőcsap nélküli kivitelűek, a porlasztási szög beállítása elektromos mikroszkópon történik.",
+    paragraphs: [
+      "Az F2-es Delphi magasnyomású javításánál a fúvókák illesztőcsap nélküli kivitelűek, a porlasztási szöget elektromos mikroszkópon, precíziós szögmérő segítségével állítjuk be.",
+    ],
+  },
+  {
+    slug: "gdi-benzin-befecskendezok",
+    title: "GDI magasnyomású, piezo és mágnestekercs vezérelt benzinbefecskendezők vizsgálatát elkezdtük",
+    date: "2023",
+    image: "/media/hirek/gdi.png",
+    contain: true,
+    home: true,
+    lead: "2023 februárjától GDI magasnyomású, piezo és mágnestekercs vezérelt benzinbefecskendezőket vizsgálunk.",
+    paragraphs: [
+      "Folyamatosan bővülő paletta a legújabb rendszerekhez is. Lehetőség nyílik próbapadon GDI magasnyomású szivattyúk tesztelésére, de mivel a szivattyúkhoz javítási technológia nincs, a hibát szétszerelés nélkül nem tudjuk biztonsággal megállapítani.",
+      "A régi tömítésekkel való összeszerelés viszont szivárgást okozhat, ami egy benzines rendszernél tűzveszélyes lehet. Ezért ezen szivattyúk tesztelését elvetettük.",
+    ],
+  },
+  {
+    slug: "carbon-zapp-mtbrx",
+    title: "Megérkezett a Carbon Zapp MTBRX próbapad",
+    date: "2022",
+    image: "/media/hirek/carbon-zapp.png",
+    contain: true,
+    home: true,
+    lead: "2022 szeptemberében önálló dízel- és benzinüzemű vizsgálópad érkezett CRDi, GDi valamint EUI/EUP rendszerekhez, akár 2800 barig.",
+    paragraphs: [
+      "Korszerű, önálló dízel- és benzinüzemű vizsgálópad, amelyet olyan szakemberek számára terveztek, akiknek átfogó tesztelési, kódolási és diagnosztikai megoldásokra van szükségük CRDi, GDi, valamint EUI/EUP rendszerekhez. Támogatja a modern EU6 technológiákat, és akár 2800 bar nyomásig teszi lehetővé a nagynyomású vizsgálatokat.",
+      "Az eszközön elérhető: CRDi, GDi és EUI-EUP injektor- és szivattyúvizsgálat, akár 2800 bar nyomás, EU6 technológiák támogatása, CloudX alapú platform, Siemens gyári technológia injektorvizsgálathoz, valamint GDI magasnyomású, piezo és mágnestekercs vezérelt benzinbefecskendezők vizsgálata.",
+    ],
+  },
+  {
+    slug: "dci-700",
+    title: "Megérkezett a DCI 700 próbapad",
+    date: "2020",
+    image: "/media/hirek/dci-700.png",
+    contain: true,
+    home: true,
+    lead: "A műhelyben 2020 óta elérhető a Bosch DCI 700 dízel próbapad.",
+    paragraphs: [
+      "A Móricz Bosch Diesel Center műhelyében 2020 óta elérhető a Bosch DCI 700 dízel próbapad. Jövőbiztos konstrukciójában az új mérési rendszert a legújabb befecskendező technológiák teszik alkalmassá az összes személyautó- és haszonjármű-rendszer tesztelésére, beleértve a tűzárás-ellenőrzésű (NCC) és a szelepzárás-ellenőrzésű (VCC) injektorokat is, és a CRIN 4.2 négy csatlakozós befecskendezők vizsgálatát.",
+      "A DCI 700 rövid felszerelési és tesztelési időkkel dolgozik: akár négy injektor is bevizsgálható kevesebb mint 15 perc alatt.",
+    ],
+  },
   {
     slug: "cp4-common-rail",
     title: "CP4 Common-Rail adagolók javítása",

@@ -46,6 +46,9 @@ export default function ContactPage() {
             <a className="mt-4 inline-flex font-semibold underline-offset-4 hover:underline" href={`mailto:${company.email}`}>
               {company.email}
             </a>
+            <a className="mt-3 inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.tiktok} target="_blank" rel="noreferrer">
+              TikTok · Móricz Kft
+            </a>
             <p className="mt-auto pt-8 text-sm font-semibold">
               GPS: é. sz. {company.gps.lat}°, k. h. {company.gps.lng}°
             </p>

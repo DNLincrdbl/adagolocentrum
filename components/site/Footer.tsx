@@ -9,8 +9,8 @@ export function Footer() {
     <footer className="bg-white">
       <div aria-hidden="true" className="h-40 bg-gradient-to-b from-paper to-white" />
       <div className="mx-auto max-w-6xl px-4 pb-8 md:px-6">
-        <div className="grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative z-10 p-8 sm:p-12 lg:py-16 lg:pr-6 lg:pl-14">
+        <div className="relative grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:min-h-[24rem]">
+          <div className="relative z-10 p-8 sm:p-12 lg:w-[56%] lg:py-16 lg:pr-8 lg:pl-14">
             <p className="text-sm font-medium text-muted">Móricz Bosch Diesel Center</p>
             <h2 className="mt-4 max-w-md text-4xl font-semibold tracking-tight text-balance text-ink md:text-5xl">
               Hozd az adagolót. A többit a padon elintézzük.
@@ -26,15 +26,14 @@ export function Footer() {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="relative min-h-64 lg:min-h-full">
+          <div className="relative min-h-72 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[78%]">
             <Image
               src="/media/closeup.jpg"
               alt="Bosch próbapad közeli képe a műhelyben"
               fill
-              className="object-cover object-[70%_center]"
-              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover object-[72%_center] [mask-image:linear-gradient(to_top,transparent_0%,rgba(0,0,0,0.2)_28%,rgba(0,0,0,0.55)_52%,black_78%)] [-webkit-mask-image:linear-gradient(to_top,transparent_0%,rgba(0,0,0,0.2)_28%,rgba(0,0,0,0.55)_52%,black_78%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.04)_22%,rgba(0,0,0,0.16)_40%,rgba(0,0,0,0.38)_58%,rgba(0,0,0,0.66)_76%,black_100%)] lg:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.04)_22%,rgba(0,0,0,0.16)_40%,rgba(0,0,0,0.38)_58%,rgba(0,0,0,0.66)_76%,black_100%)]"
+              sizes="(min-width: 1024px) 52vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent lg:bg-gradient-to-r lg:from-white lg:via-white/75 lg:to-white/0" />
           </div>
         </div>
 
@@ -90,6 +89,9 @@ export function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-muted">{company.address}</p>
             <a className="mt-3 block text-sm text-muted transition hover:text-ink" href={`mailto:${company.email}`}>
               {company.email}
+            </a>
+            <a className="mt-3 block text-sm font-semibold text-ink transition hover:text-accent" href={company.tiktok} target="_blank" rel="noreferrer">
+              TikTok · Móricz Kft
             </a>
             <ul className="mt-3 space-y-2">
               {company.phones.map((phone) => (

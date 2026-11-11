@@ -201,10 +201,10 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-5 px-4 py-16 md:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-        <div className="relative min-h-[28rem] overflow-hidden rounded-[2rem]">
+        <div className="relative min-h-[28rem] min-w-0 overflow-hidden rounded-[2rem]">
           <Image src="/media/workshop.jpg" alt="A hajdúböszörményi műhely" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
         </div>
-        <div className="flex flex-col justify-between rounded-[2rem] bg-ink p-8 text-white md:p-10">
+        <div className="flex min-w-0 flex-col justify-between rounded-[2rem] bg-ink p-8 text-white md:p-10">
           <div>
             <p className="text-xs font-extrabold tracking-[0.2em] text-accent-bright uppercase">A centrum</p>
             <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-balance">Hajdúböszörményből, az M35 mellett.</h2>
@@ -327,11 +327,11 @@ export default function HomePage() {
             Archívum
           </Link>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {news.slice(0, 3).map((item) => (
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {news.filter((item) => item.home).map((item) => (
             <Link key={item.slug} href={`/hirek/${item.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] transition hover:-translate-y-1">
-              <span className="relative block h-44">
-                <Image src={item.image} alt="" fill className="object-cover" sizes="(min-width: 768px) 30vw, 100vw" />
+              <span className={`relative block h-52 ${item.contain ? "bg-paper" : ""}`}>
+                <Image src={item.image} alt="" fill className={item.contain ? "object-contain p-4" : "object-cover"} sizes="(min-width: 1024px) 30vw, 100vw" />
               </span>
               <span className="flex flex-1 flex-col p-6">
                 <span className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">{item.date}</span>
@@ -341,6 +341,24 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-4 md:px-6">
+        <Link
+          href="/technologiai-fejlesztes"
+          className="block overflow-hidden rounded-[1.75rem] bg-white p-4 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/5 transition hover:-translate-y-0.5 md:p-6"
+        >
+          <Image
+            src="/brand/szechenyi-terv-plusz.png"
+            alt="Széchenyi Terv Plusz. Magyarország Kormánya. Az Európai Unió társfinanszírozásával."
+            width={1737}
+            height={496}
+            className="h-auto w-full"
+          />
+          <span className="mt-4 block px-2 pb-2 text-sm font-extrabold tracking-tight text-ink md:px-3">
+            Technológiai fejlesztés a Móricz Kft-nél
+          </span>
+        </Link>
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-8 md:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:pb-16">

@@ -42,9 +42,11 @@ export function Faq() {
             >
               <span className="text-base font-extrabold tracking-tight sm:text-lg">{item.q}</span>
               <span
-                className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-lg font-bold text-white transition duration-500 ${expanded ? "rotate-45 bg-ink" : "bg-accent"}`}
+                className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-white transition duration-500 ${expanded ? "rotate-45 bg-ink" : "bg-accent"}`}
               >
-                +
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+                </svg>
               </span>
             </button>
             <div className="reveal" data-open={expanded}>

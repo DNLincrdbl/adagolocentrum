@@ -15,14 +15,14 @@ export default function NewsPage() {
       <PageHero
         eyebrow="Hírarchívum"
         title="Amit a műhely életéből megírtunk."
-        lead="CP4 javítás, új próbapad, műhelyszárny és a Diesel Egyesület hajdúböszörményi találkozója."
+        lead="Új próbapadok, bővítések és a műhely korábbi hírei, évenként."
         image="/from-site/feltoltes/111004_diesel_center.jpg"
       />
       <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-2 md:px-6 lg:grid-cols-3">
         {news.map((item) => (
           <Link key={item.slug} href={`/hirek/${item.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white ring-1 ring-black/5">
-            <span className="relative block h-48">
-              <Image src={item.image} alt="" fill className="object-cover" sizes="(min-width: 1024px) 30vw, 100vw" />
+            <span className={`relative block h-48 ${item.contain ? "bg-paper" : ""}`}>
+              <Image src={item.image} alt="" fill className={item.contain ? "object-contain p-4" : "object-cover"} sizes="(min-width: 1024px) 30vw, 100vw" />
             </span>
             <span className="flex flex-1 flex-col p-5">
               <span className="text-xs font-extrabold tracking-[0.16em] text-muted uppercase">{item.date}</span>
