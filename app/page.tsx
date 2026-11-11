@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Faq } from "@/components/site/Faq";
-import { additionalPartners, references } from "@/lib/catalog";
+import { additionalPartners, featuredReferences, references } from "@/lib/catalog";
 import { albums } from "@/lib/archive";
 import { company, gallery, news, staff } from "@/lib/site";
 
@@ -262,12 +262,15 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            {references.slice(0, 4).map((item) => (
+            {featuredReferences.map((item) => (
               <article key={item.name} className="rounded-[1.35rem] bg-white/8 p-5 ring-1 ring-white/10">
                 <p className="text-lg font-extrabold">{item.name}</p>
-                <p className="mt-1 text-sm text-white/60">
-                  {item.city} · {item.since}
-                </p>
+                {item.city ? (
+                  <p className="mt-1 text-sm text-white/60">
+                    {item.city}
+                    {item.since ? ` · ${item.since}` : ""}
+                  </p>
+                ) : null}
               </article>
             ))}
           </div>
@@ -331,7 +334,7 @@ export default function HomePage() {
           {news.filter((item) => item.home).map((item) => (
             <Link key={item.slug} href={`/hirek/${item.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] transition hover:-translate-y-1">
               <span className={`relative block h-52 ${item.contain ? "bg-paper" : ""}`}>
-                <Image src={item.image} alt="" fill className={item.contain ? "object-contain p-4" : "object-cover"} sizes="(min-width: 1024px) 30vw, 100vw" />
+                <Image src={item.image} alt="" fill loading="eager" className={item.contain ? "object-contain p-4" : "object-cover"} sizes="(min-width: 1024px) 30vw, 100vw" />
               </span>
               <span className="flex flex-1 flex-col p-6">
                 <span className="text-xs font-extrabold tracking-[0.16em] text-accent uppercase">{item.date}</span>

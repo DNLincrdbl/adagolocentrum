@@ -44,6 +44,7 @@ export function Footer() {
               alt="Móricz Bosch Diesel Center"
               width={1646}
               height={490}
+              loading="eager"
               className="h-12 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">

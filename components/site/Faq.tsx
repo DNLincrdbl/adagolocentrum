@@ -17,7 +17,7 @@ const items = [
   },
   {
     q: "Az árlista tartalmazza az alkatrészt?",
-    a: "Nem. A közzétett árak 2023. május 1-jétől érvényes tájékoztató munkadíjak. A beépített alkatrész külön tétel. Elfogadott árajánlatnál a szét- és összeszerelés a javítási árban benne van.",
+    a: "Nem. A közzétett árak 2027. január 1-jétől érvényes tájékoztató munkadíjak. A beépített alkatrész külön tétel. Elfogadott árajánlatnál a szét- és összeszerelés a javítási árban benne van.",
   },
   {
     q: "Vissza tudják küldeni az adagolót?",

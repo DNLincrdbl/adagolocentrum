@@ -78,6 +78,7 @@ export function Loader() {
           width={1646}
           height={490}
           priority
+          loading="eager"
           className="h-16 w-auto sm:h-20"
         />
         <p className="mt-10 flex items-end gap-3 text-ink">

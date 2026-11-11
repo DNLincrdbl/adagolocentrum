@@ -6,7 +6,7 @@ import { priceNotice } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "Árlista",
   description:
-    "Tájékoztató munkadíjak dieseladagoló és common rail javításhoz. Érvényes 2023. május 1-től visszavonásig.",
+    "Tájékoztató munkadíjak dieseladagoló és common rail javításhoz. Érvényes 2027. január 1-től visszavonásig.",
 };
 
 export default function PricePage() {

@@ -1,7 +1,7 @@
 export type PriceRow = { type: string; net: string; gross: string };
 
 export const priceNotice = {
-  valid: "2023. május 1-től visszavonásig",
+  valid: "2027. január 1-től visszavonásig",
   split: "15 000 / 25 000 Ft",
   reassembly: "10 000 Ft",
 };
@@ -87,6 +87,7 @@ export type Reference = {
 
 const rawReferences: [string, string, string, Country][] = [
   ["Axiál Kft.", "Debrecen", "2007", "HU"],
+  ["AgroVario Kft.", "Békéscsaba", "", "HU"],
   ["Autóméry Kft.", "Nyíregyháza", "2008", "HU"],
   ["Béke Agrárszövetkezet", "Hajdúböszörmény", "2007 óta", "HU"],
   ["Balmaz-Agro Kft.", "Balmazújváros", "2008", "HU"],
@@ -146,8 +147,14 @@ export const references: Reference[] = rawReferences.map(([name, city, since, co
   country,
 }));
 
+const featuredReferenceNames = ["Axiál Kft.", "AgroVario Kft.", "Két-Kata Kft.", "KITE Zrt."];
+
+export const featuredReferences: { name: string; city: string; since: string }[] = featuredReferenceNames.map((name) => {
+  const known = references.find((item) => item.name === name);
+  return known ?? { name, city: "", since: "" };
+});
+
 const namedPartners = [
-  "AgroVario Kft.",
   "Kite Zrt.",
   "Postaflotta Kft.",
   "Magisz Kft.",

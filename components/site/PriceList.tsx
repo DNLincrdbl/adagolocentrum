@@ -33,17 +33,15 @@ export function PriceList() {
       <div className="mt-8 space-y-8">
         {groups.map((group) => (
           <section key={group.id} className="overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-black/5">
-            <div className="flex flex-col gap-3 border-b border-black/5 px-5 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-7">
-              <div>
-                <h2 className="text-2xl font-semibold tracking-tight">{group.title}</h2>
-                <p className="mt-1 text-sm text-muted">
-                  Kapcsolattartó: {group.contact} ·{" "}
-                  <a className="font-semibold text-ink underline-offset-4 hover:underline" href={`tel:${group.tel}`}>
-                    {group.phone}
-                  </a>
-                </p>
-              </div>
-              <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Csak munkadíj</p>
+            <div className="border-b border-black/5 px-5 py-5 sm:px-7">
+              <h2 className="text-2xl font-semibold tracking-tight">{group.title}</h2>
+              <p className="mt-1 text-sm text-muted">
+                Kapcsolattartó: {group.contact} ·{" "}
+                <a className="font-semibold text-ink underline-offset-4 hover:underline" href={`tel:${group.tel}`}>
+                  {group.phone}
+                </a>
+              </p>
+              <p className="mt-4 text-center text-lg font-extrabold tracking-tight text-ink">Csak munkadíj</p>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-left text-sm">
