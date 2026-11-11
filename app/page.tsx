@@ -357,25 +357,6 @@ export default function HomePage() {
         <Faq />
       </section>
 
-      <section aria-label="Széchenyi Terv Plusz" className="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-12">
-        <Link
-          href="/technologiai-fejlesztes"
-          className="group block rounded-[2rem] bg-white p-5 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] outline-offset-4 transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-accent md:p-8"
-        >
-          <Image
-            src="/brand/szechenyi-terv-plusz.png"
-            alt="Széchenyi Terv Plusz. Magyarország Kormánya. Az Európai Unió társfinanszírozásával."
-            width={1737}
-            height={496}
-            className="h-auto w-full"
-            sizes="(min-width: 1152px) 1024px, 100vw"
-          />
-          <p className="mt-5 text-center text-sm font-extrabold tracking-tight text-ink transition group-hover:text-accent md:text-base">
-            Technológiai fejlesztés a Móricz Kft-nél
-          </p>
-        </Link>
-      </section>
-
       <section className="px-4 pt-8 pb-6 md:px-6">
         <div className="mx-auto grid max-w-6xl items-start gap-8 rounded-[2rem] bg-ink p-6 md:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
           <div className="text-white">

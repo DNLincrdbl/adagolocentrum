@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-white">
       <div aria-hidden="true" className="h-40 bg-gradient-to-b from-paper to-white" />
-      <div className="mx-auto max-w-6xl px-4 pb-12 md:px-6">
+      <div className="mx-auto max-w-6xl px-4 pb-28 md:px-6 md:pb-36">
         <div className="relative grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:min-h-[24rem]">
           <div className="relative z-10 p-8 sm:p-12 lg:w-[56%] lg:py-16 lg:pr-8 lg:pl-14">
             <p className="text-sm font-medium text-muted">Móricz Bosch Diesel Center</p>
@@ -118,6 +118,19 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <Link
+        href="/technologiai-fejlesztes"
+        aria-label="Technológiai fejlesztés a Móricz Kft-nél. Széchenyi Terv Plusz, Magyarország Kormánya, az Európai Unió társfinanszírozásával."
+        className="fixed bottom-2.5 left-2.5 z-40 block rounded-[10px] bg-white p-2.5 shadow-[0_12px_32px_-18px_rgba(18,18,18,0.45)]"
+      >
+        <Image
+          src="/brand/szechenyi-terv-plusz.png"
+          alt=""
+          width={1737}
+          height={496}
+          className="h-auto w-52 md:w-80"
+        />
+      </Link>
     </footer>
   );
 }
