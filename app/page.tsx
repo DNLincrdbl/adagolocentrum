@@ -343,24 +343,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-4 md:px-6">
-        <Link
-          href="/technologiai-fejlesztes"
-          className="block overflow-hidden rounded-[1.75rem] bg-white p-4 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] ring-1 ring-black/5 transition hover:-translate-y-0.5 md:p-6"
-        >
-          <Image
-            src="/brand/szechenyi-terv-plusz.png"
-            alt="Széchenyi Terv Plusz. Magyarország Kormánya. Az Európai Unió társfinanszírozásával."
-            width={1737}
-            height={496}
-            className="h-auto w-full"
-          />
-          <span className="mt-4 block px-2 pb-2 text-sm font-extrabold tracking-tight text-ink md:px-3">
-            Technológiai fejlesztés a Móricz Kft-nél
-          </span>
-        </Link>
-      </section>
-
       <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-8 md:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:pb-16">
         <div>
           <p className="text-xs font-extrabold tracking-[0.2em] text-accent uppercase">Gyakori kérdések</p>

@@ -6,7 +6,7 @@ const pages = [...mainNav, { href: "/kapcsolat", label: "Kapcsolat" }];
 
 export function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white pb-32 sm:pb-40">
       <div aria-hidden="true" className="h-40 bg-gradient-to-b from-paper to-white" />
       <div className="mx-auto max-w-6xl px-4 pb-8 md:px-6">
         <div className="relative grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:min-h-[24rem]">
@@ -117,6 +117,24 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <Link
+        href="/technologiai-fejlesztes"
+        aria-label="Technológiai fejlesztés a Móricz Kft-nél. Széchenyi Terv Plusz, Magyarország Kormánya, az Európai Unió társfinanszírozásával."
+        className="fixed bottom-0 left-0 z-40 flex h-28 w-40 items-end overflow-hidden rounded-tr-[100%] bg-white pb-1.5 pl-2.5 shadow-[0_12px_32px_-20px_rgba(18,18,18,0.45)] sm:h-40 sm:w-60 sm:pb-2.5 sm:pl-3"
+      >
+        <span className="block w-[72%]">
+          <Image
+            src="/brand/szechenyi-terv-plusz.png"
+            alt=""
+            width={1737}
+            height={496}
+            className="h-auto w-full"
+          />
+          <span className="mt-1 block text-[10px] font-extrabold leading-tight tracking-tight text-ink sm:text-xs">
+            Technológiai fejlesztés a Móricz Kft-nél
+          </span>
+        </span>
+      </Link>
     </footer>
   );
 }
