@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: "Móricz Kft., 4220 Hajdúböszörmény, Polgári utca 107. Telefon, e-mail és megközelítés.",
 };
 
-const mapQuery = `${company.gps.lat},${company.gps.lng}`;
-const mapSrc = `https://maps.google.com/maps?q=${mapQuery}+(Móricz+Bosch+Diesel+Center)&z=16&hl=hu&output=embed`;
+const mapQuery = encodeURIComponent(company.address);
+const mapSrc = `https://maps.google.com/maps?q=${mapQuery}&z=16&hl=hu&output=embed`;
 const mapLink = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 
 export default function ContactPage() {

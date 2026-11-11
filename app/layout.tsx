@@ -15,11 +15,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.adagolocentrum.hu"),
   title: {
-    default: "Móricz Bosch Diesel Center | Dieseladagoló javítás",
+    default: "Móricz Bosch Diesel Center | Dieseladagoló és injektor javítás",
     template: "%s | Móricz Bosch Diesel Center",
   },
   description:
-    "A Móricz Kft. hajdúböszörményi Bosch Diesel Centere dieseladagolók diagnosztikáját, javítását és felújítását végzi az ország egész területén. Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental.",
+    "A Móricz Kft. hajdúböszörményi Bosch Diesel Centere dieseladagolók és common rail injektorok diagnosztikáját, javítását és felújítását végzi az ország egész területén. Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental.",
   openGraph: {
     title: "Móricz Bosch Diesel Center",
     description:
@@ -35,7 +35,7 @@ const jsonLd = {
   name: company.brand,
   url: "https://www.adagolocentrum.hu",
   email: company.email,
-  telephone: "+36-20-926-5890",
+  telephone: "+36-20-956-1955",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Polgári u. 107.",

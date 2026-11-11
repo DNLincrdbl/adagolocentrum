@@ -5,16 +5,18 @@ export function PageHero({
   title,
   lead,
   image = "/media/workshop.jpg",
+  imageClassName = "",
 }: {
   eyebrow: string;
   title: string;
   lead?: string;
   image?: string;
+  imageClassName?: string;
 }) {
   return (
     <section className="px-4 pt-6 md:px-6">
       <div className="relative mx-auto min-h-[26rem] max-w-6xl overflow-hidden rounded-[2rem] bg-ink">
-        <Image src={image} alt="" fill priority loading="eager" quality={90} className="object-cover" sizes="100vw" />
+        <Image src={image} alt="" fill priority loading="eager" quality={90} className={`object-cover ${imageClassName}`} sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
         <div className="relative z-10 flex min-h-[26rem] flex-col justify-end p-7 sm:p-10 md:p-14">
           <p className="text-xs font-extrabold tracking-[0.22em] text-accent-bright uppercase">{eyebrow}</p>

@@ -15,7 +15,7 @@ export default function ReferencesPage() {
         eyebrow="Referenciáink"
         title="Szervizek, volánok, agrárcégek, határon túl is."
         lead="Az elmúlt években az alábbi vállalatok és intézmények vették igénybe a szolgáltatásainkat. A lista a korábbi honlap közlése."
-        image="/from-site/img/diesel_adagolo.jpg"
+        image="/media/injektor-szivattyu.jpg"
       />
       <section className="mx-auto max-w-6xl px-4 py-12 md:px-6">
         <ReferenceList />

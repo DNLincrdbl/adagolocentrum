@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 export const metadata: Metadata = {
   title: "Szolgáltatások",
   description:
-    "Dieseladagolók diagnosztizálása, beállítása, javítása és alkatrész-kereskedelem. Bosch, Delphi, Denso, Stanadyne.",
+    "Dieseladagoló és injektor javítás, diagnosztika, beállítás és alkatrész. Bosch, Delphi, Denso, Stanadyne, Motorpal és Continental.",
 };
 
 const steps = [
@@ -33,7 +33,7 @@ export default function ServicesPage() {
         eyebrow="Szolgáltatásaink"
         title="Diagnosztika, javítás, alkatrész."
         lead="Az Európában legelterjedtebb dieseladagolókat vállaljuk: mezőgazdasági gépek, teherautók és személyautók. A szakszerű javítást rövid határidővel."
-        image="/from-site/img/adagolo_ellenorzes.jpg"
+        image="/media/workshop.jpg"
       />
       <section className="mx-auto max-w-6xl px-4 py-12 md:px-6">
         <div className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">

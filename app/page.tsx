@@ -76,6 +76,9 @@ function People({ people }: { people: readonly { name: string; role: string; pho
         <article key={person.name} className="overflow-hidden rounded-[1.35rem] bg-paper">
           <div className="relative h-52">
             <Image src={person.photo} alt={person.name} fill className="object-cover object-[center_28%]" sizes="(min-width: 1024px) 22vw, 45vw" />
+            {person.photo.endsWith("szabo-csaba.jpg") ? (
+              <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[34%] bg-gradient-to-t from-white/80 via-white/45 to-transparent" />
+            ) : null}
           </div>
           <div className="p-4">
             <p className="font-extrabold tracking-tight">{person.name}</p>
@@ -112,7 +115,7 @@ export default function HomePage() {
               Bosch Diesel Center · Hajdúböszörmény
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-white sm:text-6xl lg:text-7xl">
-              Dieseladagoló javítás az egész országnak.
+              Dieseladagoló és magasnyomású rendszerek javítása az egész országnak.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-pretty text-white/80 sm:text-lg">
               A Móricz Kft. ma Magyarország egyik legismertebb dieseladagoló-szervize. A műhely Hajdúböszörményben dolgozik, a szolgáltatást az ország egész területén nyújtjuk.
@@ -202,7 +205,7 @@ export default function HomePage() {
 
       <section className="mx-auto grid max-w-6xl gap-5 px-4 py-16 md:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
         <div className="relative min-h-[28rem] min-w-0 overflow-hidden rounded-[2rem]">
-          <Image src="/media/workshop.jpg" alt="A hajdúböszörményi műhely" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+          <Image src="/media/bejarat.jpg" alt="A Móricz Bosch Diesel Center bejárata" fill className="object-cover object-[center_42%]" sizes="(min-width: 1024px) 50vw, 100vw" />
         </div>
         <div className="flex min-w-0 flex-col justify-between rounded-[2rem] bg-ink p-8 text-white md:p-10">
           <div>
@@ -352,6 +355,25 @@ export default function HomePage() {
           <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-balance">Mielőtt behozod az adagolót.</h2>
         </div>
         <Faq />
+      </section>
+
+      <section aria-label="Széchenyi Terv Plusz" className="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-12">
+        <Link
+          href="/technologiai-fejlesztes"
+          className="group block rounded-[2rem] bg-white p-5 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] outline-offset-4 transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-accent md:p-8"
+        >
+          <Image
+            src="/brand/szechenyi-terv-plusz.png"
+            alt="Széchenyi Terv Plusz. Magyarország Kormánya. Az Európai Unió társfinanszírozásával."
+            width={1737}
+            height={496}
+            className="h-auto w-full"
+            sizes="(min-width: 1152px) 1024px, 100vw"
+          />
+          <p className="mt-5 text-center text-sm font-extrabold tracking-tight text-ink transition group-hover:text-accent md:text-base">
+            Technológiai fejlesztés a Móricz Kft-nél
+          </p>
+        </Link>
       </section>
 
       <section className="px-4 pt-8 pb-6 md:px-6">

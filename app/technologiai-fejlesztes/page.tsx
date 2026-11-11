@@ -109,8 +109,8 @@ export default function GrantPage() {
           </p>
           <p>
             További információ kérhető: Móricz Zsolt, ügyvezető. Elérhetőség:{" "}
-            <a className="font-semibold text-ink underline-offset-4 hover:underline" href="tel:+36209265890">
-              +36 20 926 5890
+            <a className="font-semibold text-ink underline-offset-4 hover:underline" href="tel:+36209561955">
+              +36 20 956 1955
             </a>
             ,{" "}
             <a className="font-semibold text-ink underline-offset-4 hover:underline" href="mailto:info@adagolocentrum.hu">

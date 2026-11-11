@@ -50,7 +50,7 @@ export const priceGroups: {
   {
     id: "ii",
     title: "II. termékcsoport",
-    contact: "Boros Csilla",
+    contact: "Sőrésné Boros Csilla",
     phone: "+36 20 926 5890",
     tel: "+36209265890",
     rows: [

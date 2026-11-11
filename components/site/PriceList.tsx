@@ -41,23 +41,33 @@ export function PriceList() {
                   {group.phone}
                 </a>
               </p>
-              <p className="mt-4 text-center text-lg font-extrabold tracking-tight text-ink">Csak munkadíj</p>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[640px] text-left text-sm">
-                <thead className="text-xs tracking-[0.14em] text-muted uppercase">
+              <table className="w-full min-w-[720px] text-left text-sm">
+                <colgroup>
+                  <col />
+                  <col className="w-52" />
+                  <col className="w-52" />
+                </colgroup>
+                <thead>
                   <tr>
+                    <th className="px-5 pt-4 pb-1 sm:px-7" />
+                    <th colSpan={2} className="px-0 pt-4 pb-1 text-center text-lg font-extrabold tracking-tight text-ink">
+                      Csak munkadíj
+                    </th>
+                  </tr>
+                  <tr className="text-xs tracking-[0.14em] text-muted uppercase">
                     <th className="px-5 py-3 font-semibold sm:px-7">Adagolótípus</th>
-                    <th className="px-4 py-3 font-semibold">Nettó</th>
-                    <th className="px-5 py-3 font-semibold sm:px-7">Bruttó</th>
+                    <th className="px-2 py-3 text-center font-semibold">Nettó</th>
+                    <th className="px-2 py-3 text-center font-semibold">Bruttó</th>
                   </tr>
                 </thead>
                 <tbody>
                   {group.rows.map((row) => (
                     <tr key={row.type} className="border-t border-black/5">
                       <td className="px-5 py-3.5 font-medium sm:px-7">{row.type}</td>
-                      <td className="px-4 py-3.5 text-muted">{row.net}</td>
-                      <td className="px-5 py-3.5 font-semibold sm:px-7">{row.gross}</td>
+                      <td className="px-2 py-3.5 text-center whitespace-nowrap text-muted">{row.net}</td>
+                      <td className="px-2 py-3.5 text-center font-semibold whitespace-nowrap">{row.gross}</td>
                     </tr>
                   ))}
                 </tbody>

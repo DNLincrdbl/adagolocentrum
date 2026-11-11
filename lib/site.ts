@@ -11,20 +11,20 @@ export const company = {
   tax: "12765957-2-09",
   bank: "116000006-00000000-66139399",
   bankName: "Polgári Takarékszövetkezet",
-  gps: { lat: 47.684343, lng: 21.495953 },
+  gps: { lat: 47.675511, lng: 21.491145 },
   tiktok: "https://www.tiktok.com/@moricz.kft",
   phones: [
     {
       role: "Szervizvezető-tulajdonos",
       name: "Móricz Zsolt",
-      phone: "+36 20 926 5890",
-      tel: "+36209265890",
+      phone: "+36 20 956 1955",
+      tel: "+36209561955",
     },
     {
       role: "Ügyvezető, II. termékcsoport",
-      name: "",
-      phone: "+36 20 956 1955",
-      tel: "+36209561955",
+      name: "Sőrésné Boros Csilla",
+      phone: "+36 20 926 5890",
+      tel: "+36209265890",
     },
     {
       role: "Vevőszolgálat, I. termékcsoport",
@@ -102,8 +102,7 @@ export const gallery = [
 
 export const staff = [
   { name: "Móricz Zsolt", role: "Szervizvezető-tulajdonos", photo: "/from-site/img/0401.jpg", place: "iroda" },
-  { name: "Papp Edit", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0402.jpg", place: "iroda" },
-  { name: "Boros Csilla", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0403.jpg", place: "iroda" },
+  { name: "Sőrésné Boros Csilla", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0403.jpg", place: "iroda" },
   { name: "Boros Gábor", role: "Vevőszolgálati ügyintéző", photo: "/from-site/img/0404.jpg", place: "iroda" },
   { name: "Szabó Csaba", role: "Vevőszolgálat, I. termékcsoport", photo: "/media/szabo-csaba.jpg", place: "iroda" },
   { name: "Beke Antal", role: "Dieselszerelő", photo: "/from-site/img/0411.jpg", place: "muhely" },

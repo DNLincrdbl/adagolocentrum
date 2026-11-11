@@ -31,6 +31,9 @@ export default function TeamPage() {
                 <article key={person.name} className="overflow-hidden rounded-[1.5rem] bg-white ring-1 ring-black/5">
                   <div className="relative h-64 bg-paper">
                     <Image src={person.photo} alt={person.name} fill className="object-cover object-[center_28%]" sizes="(min-width: 1280px) 22vw, 45vw" />
+                    {person.photo.endsWith("szabo-csaba.jpg") ? (
+                      <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[34%] bg-gradient-to-t from-white/80 via-white/45 to-transparent" />
+                    ) : null}
                   </div>
                   <div className="p-4">
                     <p className="font-extrabold tracking-tight">{person.name}</p>
