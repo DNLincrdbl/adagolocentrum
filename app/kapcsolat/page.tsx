@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/site/ContactForm";
+import { PickupForm } from "@/components/site/PickupForm";
 import { PageHero } from "@/components/site/PageHero";
 import { company } from "@/lib/site";
 
@@ -63,6 +64,7 @@ export default function ContactPage() {
           </article>
           <ContactForm className="h-full" />
         </div>
+        <PickupForm />
       </section>
       <section className="mx-auto max-w-6xl px-4 pb-12 md:px-6">
         <div className="overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-black/5">

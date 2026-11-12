@@ -38,6 +38,7 @@ export const company = {
 export const mainNav = [
   { href: "/", label: "Kezdőlap" },
   { href: "/szolgaltatasok", label: "Szolgáltatások" },
+  { href: "/szerviz", label: "Szerviz" },
   { href: "/dieseltechnologia", label: "Dieseltechnológia" },
   { href: "/referenciak", label: "Referenciák" },
   { href: "/arlista", label: "Árlista" },

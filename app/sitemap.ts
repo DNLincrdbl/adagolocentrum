@@ -4,6 +4,7 @@ import { news } from "@/lib/site";
 const paths = [
   "",
   "/szolgaltatasok",
+  "/szerviz",
   "/dieseltechnologia",
   "/referenciak",
   "/arlista",

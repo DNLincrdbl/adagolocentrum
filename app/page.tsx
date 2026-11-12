@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Faq } from "@/components/site/Faq";
+import { OfferStrip } from "@/components/site/OfferStrip";
 import { additionalPartners, featuredReferences, references } from "@/lib/catalog";
 import { albums } from "@/lib/archive";
 import { company, gallery, news, staff } from "@/lib/site";
@@ -139,6 +140,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <OfferStrip />
 
       <section className="py-10">
         <p className="text-center text-xs font-extrabold tracking-[0.2em] text-muted uppercase">Akik már bíznak szakértelmünkben</p>
