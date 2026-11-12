@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-white">
       <div aria-hidden="true" className="h-40 bg-gradient-to-b from-paper to-white" />
-      <div className="mx-auto max-w-6xl px-4 pb-28 md:px-6 md:pb-36">
+      <div className="mx-auto max-w-6xl px-4 pb-28 md:px-6 md:pb-8">
         <div className="relative grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:min-h-[24rem]">
           <div className="relative z-10 p-8 sm:p-12 lg:w-[56%] lg:py-16 lg:pr-8 lg:pl-14">
             <p className="text-sm font-medium text-muted">Móricz Bosch Diesel Center</p>
@@ -112,15 +112,28 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-black/10 px-2 pt-6 text-sm text-muted md:flex-row md:items-center md:justify-between lg:px-4">
-          <p>© 2010–2026 Adagolócentrum · {company.short}</p>
-          <div className="flex gap-5">
-            {footerGroups[2].links.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-ink">
-                {item.label}
-              </Link>
-            ))}
+        <div className="border-t border-black/10 pt-6 pr-2 pl-2 md:pl-[max(0.5rem,calc(22.625rem-max(1.5rem,(100vw-72rem)/2+1.5rem)))] lg:pr-4">
+          <div className="flex flex-col gap-3 text-sm text-muted md:flex-row md:items-center md:justify-between">
+            <p>© 2010–2026 Adagolócentrum · {company.short}</p>
+            <div className="flex gap-5">
+              {footerGroups[2].links.map((item) => (
+                <Link key={item.href} href={item.href} className="transition hover:text-ink">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
+          <p className="mt-3 flex items-center justify-end gap-1.5 text-xs text-muted">
+            <span>Készítette:</span>
+            <a
+              href="https://noctra.hu"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold tracking-[0.14em] text-ink transition hover:text-accent"
+            >
+              NOCTRA
+            </a>
+          </p>
         </div>
       </div>
       <Link
