@@ -9,7 +9,7 @@ import { company, gallery, news, staff } from "@/lib/site";
 
 const stats = [
   { value: "2001", label: "óta diesel rendszerek javítása" },
-  { value: "10", label: "szakember a műhelyben" },
+  { value: "8", label: "szakember a műhelyben" },
   { value: "3000", label: "barig vizsgálunk" },
   { value: "7", label: "teljes körű képviselet" },
 ];
@@ -96,8 +96,9 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="px-3 pt-4 sm:px-4 sm:pt-5">
-        <div className="rise relative min-h-[40rem] w-full overflow-hidden rounded-[2rem] bg-ink shadow-[0_30px_80px_-40px_rgba(0,0,0,0.65)]">
+      <div className="flex flex-col lg:h-[calc(100svh-4.75rem-8.5rem)]">
+        <section className="min-h-[28rem] flex-1 px-3 pt-4 sm:px-4 sm:pt-5 lg:min-h-0 lg:pt-4">
+        <div className="rise relative h-full min-h-[28rem] overflow-hidden rounded-[2rem] bg-ink shadow-[0_30px_80px_-40px_rgba(0,0,0,0.65)] lg:min-h-0">
           <video
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
@@ -111,37 +112,43 @@ export default function HomePage() {
             <source src="/media/hero.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
-          <div className="relative z-10 flex min-h-[40rem] flex-col justify-end p-6 sm:p-10 md:p-14">
-            <p className="text-xs font-extrabold tracking-[0.22em] text-accent-bright uppercase">
-              Bosch Diesel Center · Hajdúböszörmény
-            </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-extrabold tracking-tight text-balance text-white sm:text-6xl lg:text-7xl">
-              Dieseladagoló és magasnyomású rendszerek javítása az egész országnak.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-pretty text-white/80 sm:text-lg">
-              A Móricz Kft. ma Magyarország egyik legismertebb dieseladagoló-szervize. A műhely Hajdúböszörményben dolgozik, a szolgáltatást az ország egész területén nyújtjuk.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/szolgaltatasok" className="rounded-full bg-accent px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-accent/30 transition hover:brightness-110">
-                Szolgáltatásaink
-              </Link>
-              <Link href="/kapcsolat" className="rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-extrabold text-white backdrop-blur transition hover:bg-white hover:text-ink">
-                Kapcsolat
-              </Link>
-            </div>
-            <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/20 pt-6 sm:grid-cols-4">
-              {stats.map((stat) => (
-                <div key={stat.value}>
-                  <dt className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{stat.value}</dt>
-                  <dd className="mt-1 text-sm text-white/70">{stat.label}</dd>
+          <div className="relative z-10 flex h-full min-h-[28rem] flex-col justify-end p-6 sm:p-8 lg:min-h-0 lg:p-6">
+            <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-end lg:gap-6">
+              <div>
+                <p className="text-xs font-extrabold tracking-[0.22em] text-accent-bright uppercase">
+                  Bosch Diesel Center · Hajdúböszörmény
+                </p>
+                <h1 className="mt-2 max-w-3xl text-3xl font-extrabold tracking-tight text-balance text-white sm:text-4xl lg:text-[2.6rem] lg:leading-[1.08]">
+                  Dieseladagoló és magasnyomású rendszerek javítása az egész országnak.
+                </h1>
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-pretty text-white/80 sm:text-base">
+                  A Móricz Kft. ma Magyarország egyik legismertebb dieseladagoló-szervize. A műhely Hajdúböszörményben dolgozik, a szolgáltatást az ország egész területén nyújtjuk.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link href="/szolgaltatasok" className="rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-lg shadow-accent/30 transition hover:brightness-110">
+                    Szolgáltatásaink
+                  </Link>
+                  <Link href="/kapcsolat" className="rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-extrabold text-white backdrop-blur transition hover:bg-white hover:text-ink">
+                    Kapcsolat
+                  </Link>
                 </div>
-              ))}
-            </dl>
+              </div>
+              <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/20 pt-5 lg:mt-0 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <dt className="text-2xl font-extrabold tracking-tight text-white lg:text-3xl">{stat.value}</dt>
+                    <dd className="mt-1 text-sm text-white/70">{stat.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
-      </section>
-
-      <OfferStrip />
+        </section>
+        <div className="mx-auto w-full max-w-6xl px-4 lg:px-6">
+          <OfferStrip />
+        </div>
+      </div>
 
       <section className="py-10">
         <p className="text-center text-xs font-extrabold tracking-[0.2em] text-muted uppercase">Akik már bíznak szakértelmünkben</p>
@@ -298,6 +305,10 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
+        <Link href="/kapcsolat#csomagfelvetel" className="mt-4 flex items-center justify-between gap-4 rounded-[1.5rem] bg-accent px-6 py-5 text-white transition hover:brightness-110">
+          <span className="text-lg font-extrabold tracking-tight">Csomagfelvétel rendelés pár kattintással</span>
+          <span aria-hidden="true" className="text-xl">→</span>
+        </Link>
       </section>
 
       <section className="bg-white py-16 md:py-20">

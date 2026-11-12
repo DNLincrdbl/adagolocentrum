@@ -13,6 +13,7 @@ export const company = {
   bankName: "Polgári Takarékszövetkezet",
   gps: { lat: 47.675511, lng: 21.491145 },
   tiktok: "https://www.tiktok.com/@moricz.kft",
+  facebook: "https://www.facebook.com/share/1MQB47A8BZ/",
   phones: [
     {
       role: "Szervizvezető-tulajdonos",

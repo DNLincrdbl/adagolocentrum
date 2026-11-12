@@ -91,9 +91,14 @@ export function Footer() {
             <a className="mt-3 block text-sm text-muted transition hover:text-ink" href={`mailto:${company.email}`}>
               {company.email}
             </a>
-            <a className="mt-3 block text-sm font-semibold text-ink transition hover:text-accent" href={company.tiktok} target="_blank" rel="noreferrer">
-              TikTok · Móricz Kft
-            </a>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+              <a className="text-sm font-semibold text-ink transition hover:text-accent" href={company.facebook} target="_blank" rel="noreferrer">
+                Facebook
+              </a>
+              <a className="text-sm font-semibold text-ink transition hover:text-accent" href={company.tiktok} target="_blank" rel="noreferrer">
+                TikTok
+              </a>
+            </div>
             <ul className="mt-3 space-y-2">
               {company.phones.map((phone) => (
                 <li key={phone.tel}>

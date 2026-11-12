@@ -72,7 +72,7 @@ export function PickupForm() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-[1.75rem] bg-white p-6 ring-1 ring-black/5 sm:p-8">
+    <form id="csomagfelvetel" onSubmit={submit} className="scroll-mt-28 rounded-[1.75rem] bg-white p-6 ring-1 ring-black/5 sm:p-8">
       <h2 className="text-2xl font-semibold tracking-tight">Csomagfelvétel</h2>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <Field label="Név" value={name} onChange={setName} autoComplete="name" required />

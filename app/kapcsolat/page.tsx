@@ -47,9 +47,14 @@ export default function ContactPage() {
             <a className="mt-4 inline-flex font-semibold underline-offset-4 hover:underline" href={`mailto:${company.email}`}>
               {company.email}
             </a>
-            <a className="mt-3 inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.tiktok} target="_blank" rel="noreferrer">
-              TikTok · Móricz Kft
-            </a>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+              <a className="inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.facebook} target="_blank" rel="noreferrer">
+                Facebook
+              </a>
+              <a className="inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.tiktok} target="_blank" rel="noreferrer">
+                TikTok
+              </a>
+            </div>
             <p className="mt-auto pt-8 text-sm font-semibold">
               GPS: é. sz. {company.gps.lat}°, k. h. {company.gps.lng}°
             </p>
