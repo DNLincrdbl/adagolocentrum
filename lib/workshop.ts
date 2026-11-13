@@ -11,7 +11,7 @@ export type WorkshopService = {
 const dpfPhone = company.phones.find((phone) => phone.tel === "+36209265890");
 
 export const workshopLead =
-  "Teljes körű mechanikus és elektromos karbantartás, valamint időszakos szervizelés minden autótípusra.";
+  "Műhelyünk alapjait 2019-ben tettük le az első komolyabb beruházásokkal, 2021-ben nyitottunk meg. A szakmai és ügyintézési feladatokat a tulajdonos fia, Móricz Kamill fogja össze.";
 
 export const workshopServices: WorkshopService[] = [
   {
@@ -47,6 +47,14 @@ export const workshopServices: WorkshopService[] = [
     ],
   },
   {
+    name: "Futómű szervíz",
+    image: "/media/szerviz/futomu.jpg",
+    fit: "snug",
+    details: [
+      "Koppan a futómű vagy húz az autó oldalra? Korszerű 3D-s futómű-beállító berendezésünkkel és futómű-alkatrész cseréjével visszaállítjuk a gyári menettulajdonságokat, óvva ezzel a gumikat a kopástól.",
+    ],
+  },
+  {
     name: "Automataváltó olaj csere",
     image: "/media/szerviz/valtocsere.jpg",
     fit: "snug",
@@ -67,7 +75,7 @@ export const workshopServices: WorkshopService[] = [
   },
   {
     name: "CHIP tuning",
-    image: "/media/szerviz/chip.jpg",
+    image: "/media/szerviz/chiptuning.jpg",
     fit: "cover",
     details: [
       "A CHIP tuning (vagy motoroptimalizálás) egy olyan eljárás, amellyel a jármű motorvezérlő egységének (ECU) gyári szoftverét módosítják a teljesítmény, a nyomaték és sok esetben a tüzelőanyag-hatékonyság növelése érdekében.",

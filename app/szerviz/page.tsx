@@ -6,7 +6,7 @@ import { workshopLead } from "@/lib/workshop";
 export const metadata: Metadata = {
   title: "Szerviz",
   description:
-    "Autószerelő műhely Hajdúböszörményben: gépjárműszerviz, diagnosztika, olajcsere, fék, automata váltó olajcsere, részecskeszűrő tisztítás és CHIP tuning.",
+    "Autószerelő műhely Hajdúböszörményben: gépjárműszerviz, diagnosztika, olajcsere, fék, futómű, automata váltó olajcsere, részecskeszűrő tisztítás és CHIP tuning.",
 };
 
 export default function WorkshopPage() {
