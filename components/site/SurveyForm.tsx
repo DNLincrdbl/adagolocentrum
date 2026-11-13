@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { company, ratingLabels, surveyQuestions } from "@/lib/site";
+import { FormErrorMessage, Honeypot, useFormSender } from "@/components/site/form-send";
+import { ratingLabels, surveyQuestions } from "@/lib/site";
 
 export function SurveyForm() {
   const questions = surveyQuestions.flatMap((group) => group.items);
@@ -11,10 +12,9 @@ export function SurveyForm() {
   const [note, setNote] = useState("");
   const [scores, setScores] = useState<Record<string, number>>({});
   const [accepted, setAccepted] = useState(false);
-  const [error, setError] = useState("");
-  const [sent, setSent] = useState(false);
+  const { sending, sent, error, setError, send } = useFormSender("/api/kerdoiv");
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (name.trim().length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError("A név és egy érvényes e-mail cím megadása szükséges.");
@@ -29,11 +29,13 @@ export function SurveyForm() {
       return;
     }
 
-    const lines = questions.map((question) => `${question} ${scores[question]} (${ratingLabels[scores[question] - 1]})`);
-    const body = [`Név: ${name}`, `E-mail: ${email}`, "", ...lines, "", note].join("\n");
-    window.location.href = `mailto:${company.email}?subject=${encodeURIComponent("Vevőelégedettségi kérdőív")}&body=${encodeURIComponent(body)}`;
-    setError("");
-    setSent(true);
+    if (await send(event.currentTarget)) {
+      setName("");
+      setEmail("");
+      setNote("");
+      setScores({});
+      setAccepted(false);
+    }
   }
 
   if (sent) {
@@ -41,18 +43,22 @@ export function SurveyForm() {
       <div className="rounded-[1.75rem] bg-ink px-6 py-10 text-white">
         <h2 className="text-3xl font-semibold tracking-tight">Köszönjük a visszajelzést.</h2>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/75">
-          Az értékelés az e-mail programjába került. Ha az ablak nem nyílt meg, küldje el kézzel az {company.email} címre.
+          Kérdőívét megkaptuk, válaszai segítenek szolgáltatásunk fejlesztésében.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={submit} className="space-y-6">
+    <form method="post" action="/api/kerdoiv" onSubmit={submit} className="relative space-y-6">
+      <Honeypot />
       <div className="grid gap-4 rounded-[1.75rem] bg-white p-6 ring-1 ring-black/5 md:grid-cols-2">
         <label className="block">
           <span className="text-sm font-semibold">Név</span>
           <input
+            name="name"
+            maxLength={100}
+            autoComplete="name"
             value={name}
             onChange={(event) => setName(event.target.value)}
             className="mt-2 w-full rounded-full border border-black/10 bg-paper px-4 py-3 outline-none ring-ink/15 focus:ring-4"
@@ -62,6 +68,9 @@ export function SurveyForm() {
           <span className="text-sm font-semibold">Email</span>
           <input
             type="email"
+            name="email"
+            maxLength={254}
+            autoComplete="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             className="mt-2 w-full rounded-full border border-black/10 bg-paper px-4 py-3 outline-none ring-ink/15 focus:ring-4"
@@ -90,7 +99,8 @@ export function SurveyForm() {
                         <input
                           type="radio"
                           className="sr-only"
-                          name={question}
+                          name={`q${questions.indexOf(question) + 1}`}
+                          value={value}
                           checked={selected}
                           onChange={() => setScores((current) => ({ ...current, [question]: value }))}
                         />
@@ -109,6 +119,8 @@ export function SurveyForm() {
       <label className="block rounded-[1.75rem] bg-white p-6 ring-1 ring-black/5">
         <span className="text-sm font-semibold">Megjegyzés</span>
         <textarea
+          name="note"
+          maxLength={5000}
           value={note}
           onChange={(event) => setNote(event.target.value)}
           rows={4}
@@ -119,6 +131,7 @@ export function SurveyForm() {
       <label className="flex items-start gap-3 rounded-[1.75rem] bg-white p-6 text-sm leading-relaxed text-muted ring-1 ring-black/5">
         <input
           type="checkbox"
+          name="privacy"
           checked={accepted}
           onChange={(event) => setAccepted(event.target.checked)}
           className="mt-1 h-4 w-4 accent-black"
@@ -132,9 +145,13 @@ export function SurveyForm() {
         </span>
       </label>
 
-      {error ? <p className="text-sm font-medium text-red-700">{error}</p> : null}
-      <button type="submit" className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">
-        Kérdőív elküldése
+      {error ? <FormErrorMessage message={error} /> : null}
+      <button
+        type="submit"
+        disabled={sending}
+        className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white disabled:cursor-wait disabled:opacity-60"
+      >
+        {sending ? "Küldés folyamatban…" : "Kérdőív elküldése"}
       </button>
     </form>
   );
