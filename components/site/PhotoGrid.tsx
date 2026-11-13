@@ -35,7 +35,7 @@ export function PhotoGrid({ images, alt }: { images: string[]; alt: string }) {
 
   const dialog = photo ? (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4"
+      className="fade-in fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4"
       role="dialog"
       aria-modal="true"
       aria-label={alt}

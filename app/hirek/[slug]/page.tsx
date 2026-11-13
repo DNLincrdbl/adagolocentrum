@@ -55,7 +55,7 @@ async function NewsArticle({ params }: { params: Promise<{ slug: string }> }) {
           <p key={paragraph}>{paragraph}</p>
         ))}
         {article.link ? (
-          <a href={article.link.href} target="_blank" rel="noreferrer" className="inline-flex font-bold text-accent underline-offset-4 hover:underline">
+          <a href={article.link.href} target="_blank" rel="noopener noreferrer" className="inline-flex font-bold text-accent underline-offset-4 hover:underline">
             {article.link.label}
           </a>
         ) : null}

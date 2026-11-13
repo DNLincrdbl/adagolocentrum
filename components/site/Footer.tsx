@@ -92,10 +92,10 @@ export function Footer() {
               {company.email}
             </a>
             <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-              <a className="text-sm font-semibold text-ink transition hover:text-accent" href={company.facebook} target="_blank" rel="noreferrer">
+              <a className="text-sm font-semibold text-ink transition hover:text-accent" href={company.facebook} target="_blank" rel="noopener noreferrer">
                 Facebook
               </a>
-              <a className="text-sm font-semibold text-ink transition hover:text-accent" href={company.tiktok} target="_blank" rel="noreferrer">
+              <a className="text-sm font-semibold text-ink transition hover:text-accent" href={company.tiktok} target="_blank" rel="noopener noreferrer">
                 TikTok
               </a>
             </div>
@@ -128,7 +128,7 @@ export function Footer() {
             <a
               href="https://noctra.hu"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="font-semibold tracking-[0.14em] text-ink transition hover:text-accent"
             >
               NOCTRA

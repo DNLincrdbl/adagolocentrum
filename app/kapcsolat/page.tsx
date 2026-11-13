@@ -28,7 +28,7 @@ export default function ContactPage() {
             <a
               key={phone.tel}
               href={`tel:${phone.tel}`}
-              className="rounded-[1.5rem] bg-white px-5 py-5 ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5"
+              className="rounded-[1.5rem] bg-white px-5 py-5 ring-1 ring-black/5 transition-transform duration-300 ease-out hover:-translate-y-0.5"
             >
               <span className="block text-xs font-semibold tracking-[0.14em] text-muted uppercase">{phone.role}</span>
               {phone.name ? <span className="mt-2 block font-semibold">{phone.name}</span> : <span className="mt-2 block h-6" aria-hidden="true" />}
@@ -48,10 +48,10 @@ export default function ContactPage() {
               {company.email}
             </a>
             <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-              <a className="inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.facebook} target="_blank" rel="noreferrer">
+              <a className="inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.facebook} target="_blank" rel="noopener noreferrer">
                 Facebook
               </a>
-              <a className="inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.tiktok} target="_blank" rel="noreferrer">
+              <a className="inline-flex font-semibold text-accent underline-offset-4 hover:underline" href={company.tiktok} target="_blank" rel="noopener noreferrer">
                 TikTok
               </a>
             </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
             <a
               href={mapLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mt-4 inline-flex w-fit rounded-full bg-ink px-5 py-3 text-sm font-extrabold text-white"
             >
               Útvonal a Google Térképen

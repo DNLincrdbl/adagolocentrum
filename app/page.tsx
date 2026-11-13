@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Faq } from "@/components/site/Faq";
+import { HeroVideo } from "@/components/site/HeroVideo";
 import { OfferStrip } from "@/components/site/OfferStrip";
 import { additionalPartners, featuredReferences, references } from "@/lib/catalog";
 import { albums } from "@/lib/archive";
@@ -99,18 +100,7 @@ export default function HomePage() {
       <div className="flex flex-col lg:h-[calc(100svh-4.75rem-8.5rem)]">
         <section className="min-h-[28rem] flex-1 px-3 pt-4 sm:px-4 sm:pt-5 lg:min-h-0 lg:pt-4">
         <div className="rise relative h-full min-h-[28rem] overflow-hidden rounded-[2rem] bg-ink shadow-[0_30px_80px_-40px_rgba(0,0,0,0.65)] lg:min-h-0">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/media/workshop.jpg"
-            preload="metadata"
-            aria-hidden="true"
-          >
-            <source src="/media/hero.mp4" type="video/mp4" />
-          </video>
+          <HeroVideo />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
           <div className="relative z-10 flex h-full min-h-[28rem] flex-col justify-end p-6 sm:p-8 lg:min-h-0 lg:p-6">
             <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-end lg:gap-6">
@@ -200,7 +190,7 @@ export default function HomePage() {
             {services.map((service) => (
               <Link key={service.title} href={service.href} className="group overflow-hidden rounded-[1.5rem] bg-white shadow-[0_24px_50px_-30px_rgba(0,0,0,0.45)]">
                 <div className="relative h-52">
-                  <Image src={service.image} alt="" fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1024px) 30vw, 100vw" />
+                  <Image src={service.image} alt="" fill className="object-cover transition-transform duration-500 ease-out group-hover:scale-105" sizes="(min-width: 1024px) 30vw, 100vw" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-extrabold tracking-tight">{service.title}</h3>
@@ -325,7 +315,7 @@ export default function HomePage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {albums.slice(0, 4).map((album) => (
               <Link key={album.id} href={`/galeria?album=${album.id}`} className="group relative min-h-64 overflow-hidden rounded-[1.5rem]">
-                <Image src={album.images[0]} alt={album.title} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1024px) 22vw, 45vw" />
+                <Image src={album.images[0]} alt={album.title} fill className="object-cover transition-transform duration-500 ease-out group-hover:scale-105" sizes="(min-width: 1024px) 22vw, 45vw" />
                 <span className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
                 <span className="absolute inset-x-0 bottom-0 p-5 text-white">
                   <span className="block text-lg font-extrabold">{album.title}</span>
@@ -349,7 +339,7 @@ export default function HomePage() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {news.filter((item) => item.home).map((item) => (
-            <Link key={item.slug} href={`/hirek/${item.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] transition hover:-translate-y-1">
+            <Link key={item.slug} href={`/hirek/${item.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] transition-transform duration-300 ease-out hover:-translate-y-1">
               <span className={`relative block h-52 ${item.contain ? "bg-paper" : ""}`}>
                 <Image src={item.image} alt="" fill loading="eager" className={item.contain ? "object-contain p-4" : "object-cover"} sizes="(min-width: 1024px) 30vw, 100vw" />
               </span>

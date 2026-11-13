@@ -15,7 +15,7 @@ export function Navbar() {
   }, [path]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95">
       <div className="mx-auto flex h-[4.75rem] max-w-7xl items-center justify-between gap-3 px-4 md:px-6">
         <Link href="/" className="shrink-0" aria-label="Kezdőlap">
           <Image
@@ -50,7 +50,7 @@ export function Navbar() {
           <a
             href={company.facebook}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="Facebook, Móricz Kft"
             className="inline-flex h-11 w-11 items-center justify-center gap-2 rounded-full bg-paper text-sm font-bold text-ink transition hover:bg-ink hover:text-white sm:w-auto sm:px-3"
           >
@@ -62,7 +62,7 @@ export function Navbar() {
           <a
             href={company.tiktok}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="TikTok, Móricz Kft"
             className="inline-flex h-11 w-11 items-center justify-center gap-2 rounded-full bg-paper text-sm font-bold text-ink transition hover:bg-ink hover:text-white sm:w-auto sm:px-3"
           >
@@ -116,7 +116,7 @@ export function Navbar() {
                 <a
                   href={company.facebook}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="rounded-2xl px-4 py-3 text-base font-bold hover:bg-paper"
                 >
                   Facebook
@@ -124,7 +124,7 @@ export function Navbar() {
                 <a
                   href={company.tiktok}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="rounded-2xl px-4 py-3 text-base font-bold hover:bg-paper"
                 >
                   TikTok

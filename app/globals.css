@@ -43,6 +43,7 @@ body {
 
 .marquee-track {
   animation: marquee 110s linear infinite;
+  will-change: transform;
 }
 
 .marquee-mask {
@@ -86,7 +87,20 @@ body {
 }
 
 .page-enter {
-  animation: page-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 180ms ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -96,7 +110,8 @@ body {
 
   .marquee-track,
   .rise,
-  .page-enter {
+  .page-enter,
+  .fade-in {
     animation: none;
   }
 

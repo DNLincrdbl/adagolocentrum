@@ -79,7 +79,8 @@ export function OfferStrip() {
             style={{
               width: `${(loop.length / 2) * 100}%`,
               transform: `translateX(-${(index * 100) / loop.length}%)`,
-              transition: animate ? `transform ${slideMs}ms cubic-bezier(0.22, 1, 0.36, 1)` : "none",
+              transition: animate && !reduced ? `transform ${slideMs}ms cubic-bezier(0.22, 1, 0.36, 1)` : "none",
+              willChange: "transform",
             }}
           >
             {loop.map((offer, position) => {
@@ -118,11 +119,11 @@ function OfferCard({ offer, hidden = false }: { offer: (typeof offers)[number]; 
     <a
       href={offer.href}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       tabIndex={hidden ? -1 : undefined}
       aria-hidden={hidden || undefined}
       aria-label={`${offer.title}, ${offer.kind} megnyitása`}
-      className="group block rounded-[1.25rem] bg-white p-3 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.55)] ring-1 ring-black/5 transition hover:-translate-y-0.5"
+      className="group block rounded-[1.25rem] bg-white p-3 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.55)] ring-1 ring-black/5 transition-transform duration-300 ease-out hover:-translate-y-0.5"
     >
       <span className="relative block h-28 overflow-hidden rounded-[0.9rem] bg-white sm:h-32 lg:h-36">
         <Image src={offer.image} alt="" fill className="object-contain" sizes="(min-width: 1024px) 28rem, 45vw" />

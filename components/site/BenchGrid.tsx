@@ -80,7 +80,7 @@ function BenchCard({ bench, open, onToggle }: { bench: Bench; open: boolean; onT
                         key={link.href}
                         href={link.href.startsWith("http") ? link.href : encodeURI(link.href)}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="text-sm font-bold text-accent underline-offset-4 hover:underline"
                       >
                         {link.label}

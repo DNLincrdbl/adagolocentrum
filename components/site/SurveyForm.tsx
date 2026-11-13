@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { company, ratingLabels, surveyQuestions } from "@/lib/site";
 
@@ -9,6 +10,7 @@ export function SurveyForm() {
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
   const [scores, setScores] = useState<Record<string, number>>({});
+  const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -20,6 +22,10 @@ export function SurveyForm() {
     }
     if (questions.some((question) => !scores[question])) {
       setError("Kérjük, minden kérdést értékeljen 1-től 4-ig.");
+      return;
+    }
+    if (!accepted) {
+      setError("A küldéshez az adatkezelési tájékoztató elfogadása szükséges.");
       return;
     }
 
@@ -108,6 +114,22 @@ export function SurveyForm() {
           rows={4}
           className="mt-2 w-full resize-y rounded-3xl border border-black/10 bg-paper px-4 py-3 outline-none ring-ink/15 focus:ring-4"
         />
+      </label>
+
+      <label className="flex items-start gap-3 rounded-[1.75rem] bg-white p-6 text-sm leading-relaxed text-muted ring-1 ring-black/5">
+        <input
+          type="checkbox"
+          checked={accepted}
+          onChange={(event) => setAccepted(event.target.checked)}
+          className="mt-1 h-4 w-4 accent-black"
+        />
+        <span>
+          Az{" "}
+          <Link href="/adatvedelem" className="font-semibold text-ink underline-offset-4 hover:underline">
+            adatkezelési tájékoztatóban
+          </Link>{" "}
+          foglaltakat megismertem.
+        </span>
       </label>
 
       {error ? <p className="text-sm font-medium text-red-700">{error}</p> : null}
