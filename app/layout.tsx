@@ -13,7 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.adagolocentrum.hu"),
+  metadataBase: new URL("https://adagolocentrum.hu"),
   title: {
     default: "Móricz Bosch Diesel Center | Dieseladagoló és injektor javítás",
     template: "%s | Móricz Bosch Diesel Center",
@@ -33,7 +33,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
   name: company.brand,
-  url: "https://www.adagolocentrum.hu",
+  url: "https://adagolocentrum.hu",
   email: company.email,
   telephone: "+36-20-956-1955",
   address: {

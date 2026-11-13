@@ -362,15 +362,15 @@ export const benches: Bench[] = [
     ],
     links: [
       {
-        href: "https://www.adagolocentrum.hu/download/CRIPRO%20jav%C3%ADthat%C3%B3.pdf",
+        href: "https://adagolocentrum.hu/download/CRIPRO%20jav%C3%ADthat%C3%B3.pdf",
         label: "CRIPRO javítható"
       },
       {
-        href: "https://www.adagolocentrum.hu/download/CRIPRO%20jav%C3%ADthat%C3%B3%202.pdf",
+        href: "https://adagolocentrum.hu/download/CRIPRO%20jav%C3%ADthat%C3%B3%202.pdf",
         label: "CRIPRO javítható 2"
       },
       {
-        href: "https://www.adagolocentrum.hu/download/CRIPRO%20jav%C3%ADthat%C3%B3%203.pdf",
+        href: "https://adagolocentrum.hu/download/CRIPRO%20jav%C3%ADthat%C3%B3%203.pdf",
         label: "CRIPRO javítható 3"
       },
       {
@@ -378,7 +378,7 @@ export const benches: Bench[] = [
         label: "DT_CRi-Pro Brochure_ENG_digi"
       },
       {
-        href: "https://www.adagolocentrum.hu/download/CRIPRO%20Jav%C3%ADthat%C3%B3%20injektorok%20list%C3%A1ja.pdf",
+        href: "https://adagolocentrum.hu/download/CRIPRO%20Jav%C3%ADthat%C3%B3%20injektorok%20list%C3%A1ja.pdf",
         label: "CRIPRO Javítható injektorok listája"
       }
     ]
