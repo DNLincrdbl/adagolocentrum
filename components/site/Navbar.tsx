@@ -15,7 +15,7 @@ export function Navbar() {
   }, [path]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95">
+    <header className="sticky top-0 z-50 border-b border-black/5 bg-white">
       <div className="mx-auto flex h-[4.75rem] max-w-7xl items-center justify-between gap-3 px-4 md:px-6">
         <Link href="/" className="shrink-0" aria-label="Kezdőlap">
           <Image

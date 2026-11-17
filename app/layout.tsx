@@ -26,6 +26,20 @@ export const metadata: Metadata = {
       "Dieseladagoló javítás és felújítás Hajdúböszörményből, országos kiszolgálással.",
     locale: "hu_HU",
     type: "website",
+    url: "https://www.adagolocentrum.hu",
+    siteName: "Móricz Bosch Diesel Center",
+    images: [
+      {
+        url: "/media/workshop.jpg",
+        width: 2752,
+        height: 1536,
+        alt: "A Móricz Bosch Diesel Center műhelye Hajdúböszörményben",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/media/workshop.jpg"],
   },
 };
 

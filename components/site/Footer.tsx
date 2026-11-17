@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-white">
       <div aria-hidden="true" className="h-40 bg-gradient-to-b from-paper to-white" />
-      <div className="mx-auto max-w-6xl px-4 pb-28 md:px-6 md:pb-8">
+      <div className="mx-auto max-w-6xl px-4 pb-40 md:px-6 md:pb-8">
         <div className="relative grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_-36px_rgba(18,18,18,0.35)] lg:min-h-[24rem]">
           <div className="relative z-10 p-8 sm:p-12 lg:w-[56%] lg:py-16 lg:pr-8 lg:pl-14">
             <p className="text-sm font-medium text-muted">Móricz Bosch Diesel Center</p>
@@ -112,7 +112,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-black/10 pt-6 pr-2 pl-2 md:pl-[max(0.5rem,calc(22.625rem-max(1.5rem,(100vw-72rem)/2+1.5rem)))] lg:pr-4">
+        <div className="border-t border-black/10 pt-6 pr-2 pl-2 md:pl-[max(0.5rem,calc(24.5rem-max(1.5rem,(100vw-72rem)/2+1.5rem)))] lg:pr-4">
           <div className="flex flex-col gap-3 text-sm text-muted md:flex-row md:items-center md:justify-between">
             <p>© 2010–2026 Adagolócentrum · {company.short}</p>
             <div className="flex gap-5">
@@ -146,7 +146,9 @@ export function Footer() {
           alt=""
           width={1737}
           height={496}
-          className="h-auto w-52 md:w-80"
+          priority
+          className="h-[100px] w-[350px] max-w-none"
+          style={{ height: 100, width: 350 }}
         />
       </Link>
     </footer>
