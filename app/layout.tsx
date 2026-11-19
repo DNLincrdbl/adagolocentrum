@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "Dieseladagoló javítás és felújítás Hajdúböszörményből, országos kiszolgálással.",
     locale: "hu_HU",
     type: "website",
-    url: "https://www.adagolocentrum.hu",
+    url: "https://adagolocentrum.hu",
     siteName: "Móricz Bosch Diesel Center",
     images: [
       {
