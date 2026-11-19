@@ -26,10 +26,10 @@ const paths = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...paths.map((path) => ({
-      url: `https://www.adagolocentrum.hu${path}`,
+      url: `https://adagolocentrum.hu${path}`,
     })),
     ...news.map((item) => ({
-      url: `https://www.adagolocentrum.hu/hirek/${item.slug}`,
+      url: `https://adagolocentrum.hu/hirek/${item.slug}`,
     })),
   ];
 }
